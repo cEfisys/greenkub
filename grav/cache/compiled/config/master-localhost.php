@@ -1,8 +1,8 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\Config',
-    'timestamp' => 1444157763,
-    'checksum' => 'ec487f7282375e1d8d09e449e19eda7f',
+    'timestamp' => 1444158538,
+    'checksum' => '90800f1bd543f058f52cc28d186ccc5a',
     'data' => [
         'streams' => [
             'schemes' => [
@@ -319,17 +319,17 @@ return [
             ]
         ],
         'site' => [
-            'title' => 'Grav',
+            'title' => 'cEfisys - Make it Green !',
             'author' => [
-                'name' => 'Joe Bloggs',
-                'email' => 'joe@test.com'
+                'name' => 'cEfisys',
+                'email' => 'geral@cefisys.pt'
             ],
             'taxonomies' => [
                 0 => 'category',
                 1 => 'tag'
             ],
             'metadata' => [
-                'description' => 'Grav is an easy to use, yet powerful, open source flat-file CMS'
+                'description' => 'cEfisys - '
             ],
             'summary' => [
                 'enabled' => true,
@@ -348,7 +348,7 @@ return [
             'blog' => [
                 'route' => '/blog'
             ],
-            'email' => 'your-email@domain.com',
+            'email' => 'geral@cefisys.pt',
             'description' => 'Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.',
             'links' => [
                 0 => [
@@ -356,7 +356,7 @@ return [
                     'url' => '#services'
                 ],
                 1 => [
-                    'title' => 'Portfolio',
+                    'title' => 'GreenKub',
                     'url' => '#portfolio'
                 ],
                 2 => [

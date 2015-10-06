@@ -2,17 +2,17 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => 'user/config/site.yaml',
-    'modified' => 1444157728,
+    'modified' => 1444158534,
     'data' => [
-        'title' => 'Grav',
+        'title' => 'cEfisys - Make it Green !',
         'author' => [
-            'name' => 'Joe Bloggs',
-            'email' => 'joe@test.com'
+            'name' => 'cEfisys',
+            'email' => 'geral@cefisys.pt'
         ],
         'metadata' => [
-            'description' => 'Grav is an easy to use, yet powerful, open source flat-file CMS'
+            'description' => 'cEfisys - '
         ],
-        'email' => 'your-email@domain.com',
+        'email' => 'geral@cefisys.pt',
         'description' => 'Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.',
         'links' => [
             0 => [
@@ -20,7 +20,7 @@ return [
                 'url' => '#services'
             ],
             1 => [
-                'title' => 'Portfolio',
+                'title' => 'GreenKub',
                 'url' => '#portfolio'
             ],
             2 => [

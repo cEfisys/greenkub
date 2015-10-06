@@ -2,8 +2,8 @@
 title: Team
 menu: Team
 people:
-    - name: Kay Garland
-      pic: 1.jpg
+    - name: Cristiano Samagaio
+      pic: 4.png
       position: Lead Designer
       social:
         - title: twitter
@@ -13,9 +13,9 @@ people:
         - title: stack-overflow
           url: '#'
 
-    - name: Larry Parker
-      pic: 2.jpg
-      position: Lead Marketer
+    - name: Diogo Teixeira
+      pic: 5.png
+      position: Chief Financial Officer
       social:
         - title: twitter
           url: '#'
@@ -24,8 +24,38 @@ people:
         - title: linkedin
           url: '#'
 
-    - name: Diana Petersen
-      pic: 3.jpg
+    - name: Hugo Viana
+      pic: 6.png
+      position: Chef Executive Officer
+      social:
+        - title: twitter
+          url: '#'
+        - title: facebook
+          url: '#'
+        - title: google-plus
+          url: '#' 
+    - name: Nuno Rodrigues
+      pic: 7.png
+      position: Chief Technology Officer
+      social:
+        - title: twitter
+          url: '#'
+        - title: facebook
+          url: '#'
+        - title: google-plus
+          url: '#' 
+    - name: Telmo Ferraria
+      pic: 8.png
+      position: Lead Developer
+      social:
+        - title: twitter
+          url: '#'
+        - title: facebook
+          url: '#'
+        - title: google-plus
+          url: '#' 
+    - name: Pedro Silva
+      pic: 9.png
       position: Lead Developer
       social:
         - title: twitter
