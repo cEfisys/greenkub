@@ -2,7 +2,7 @@
 title: Header
 menu: Top
 buttons:
-    - text: Book
+    - text: Tell me more
       url: '#about'
       primary: true
 featured: header.jpg

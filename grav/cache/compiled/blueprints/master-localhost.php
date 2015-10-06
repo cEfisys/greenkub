@@ -1,38 +1,38 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\Config',
-    'checksum' => '04246bd1ee67d8a3b39e31d8f2502b6c:0c9a6d8c9fd75da3ef571f4bc5b9fac9',
+    'checksum' => '04246bd1ee67d8a3b39e31d8f2502b6c:d307f66e436f811e383df05095a24a5f',
     'files' => [
         'user/plugins' => [
             'plugins/error' => [
                 'file' => 'user/plugins/error/blueprints.yaml',
-                'modified' => 1442917340
+                'modified' => 1444157728
             ],
             'plugins/problems' => [
                 'file' => 'user/plugins/problems/blueprints.yaml',
-                'modified' => 1442917342
+                'modified' => 1444157728
             ],
             'plugins/simple_form' => [
                 'file' => 'user/plugins/simple_form/blueprints.yaml',
-                'modified' => 1442917344
+                'modified' => 1444157728
             ]
         ],
         'system/blueprints/config' => [
             'media' => [
                 'file' => 'system/blueprints/config/media.yaml',
-                'modified' => 1442917332
+                'modified' => 1444157728
             ],
             'site' => [
                 'file' => 'system/blueprints/config/site.yaml',
-                'modified' => 1442917332
+                'modified' => 1444157728
             ],
             'streams' => [
                 'file' => 'system/blueprints/config/streams.yaml',
-                'modified' => 1442917332
+                'modified' => 1444157728
             ],
             'system' => [
                 'file' => 'system/blueprints/config/system.yaml',
-                'modified' => 1442917332
+                'modified' => 1444157728
             ]
         ]
     ],
@@ -765,11 +765,11 @@ return [
                 '@data-options' => '\\Grav\\Common\\Utils::dateFormats',
                 'options' => [
                     '' => 'Auto Guess or Enter Custom',
-                    'd-m-Y H:i' => 'd-m-Y H:i (e.g. 05-10-2015 11:58)',
-                    'Y-m-d H:i' => 'Y-m-d H:i (e.g. 2015-10-05 11:58)',
-                    'm/d/Y h:i a' => 'm/d/Y h:i (e.g. 10/05/2015 11:58 am)',
-                    'H:i d-m-Y' => 'H:i d-m-Y (e.g. 11:58 05-10-2015)',
-                    'h:i a m/d/Y' => 'h:i a m/d/Y (e.g. 11:58 am 10/05/2015)'
+                    'd-m-Y H:i' => 'd-m-Y H:i (e.g. 06-10-2015 20:56)',
+                    'Y-m-d H:i' => 'Y-m-d H:i (e.g. 2015-10-06 20:56)',
+                    'm/d/Y h:i a' => 'm/d/Y h:i (e.g. 10/06/2015 08:56 pm)',
+                    'H:i d-m-Y' => 'H:i d-m-Y (e.g. 20:56 06-10-2015)',
+                    'h:i a m/d/Y' => 'h:i a m/d/Y (e.g. 08:56 pm 10/06/2015)'
                 ],
                 'validate' => [
                     'type' => 'string'

@@ -1,6 +1,6 @@
 ---
-title: ServiceServicesHUGOs
-menu: ServicesHUGO
+title: Services
+menu: Services
 class: small
 services:
     - header: E-Commerce

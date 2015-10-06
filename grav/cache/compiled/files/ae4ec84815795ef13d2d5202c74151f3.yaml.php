@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => 'user/plugins/simple_form/simple_form.yaml',
-    'modified' => 1442917344,
+    'modified' => 1444157728,
     'data' => [
         'enabled' => false,
         'token' => '',
