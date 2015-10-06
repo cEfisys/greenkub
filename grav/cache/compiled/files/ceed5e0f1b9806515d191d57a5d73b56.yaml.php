@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => 'system/blueprints/config/system.yaml',
-    'modified' => 1441392246,
+    'modified' => 1442917332,
     'data' => [
         'title' => 'PLUGIN_ADMIN.SYSTEM',
         'form' => [
@@ -59,6 +59,23 @@ return [
                             'default' => '',
                             'options' => [
                                 '' => 'Default (Server Timezone)'
+                            ]
+                        ],
+                        'pages.dateformat.default' => [
+                            'type' => 'select',
+                            'size' => 'medium',
+                            'selectize' => [
+                                'create' => true
+                            ],
+                            'label' => 'PLUGIN_ADMIN.DEFAULT_DATE_FORMAT',
+                            'help' => 'PLUGIN_ADMIN.DEFAULT_DATE_FORMAT_HELP',
+                            'placeholder' => 'PLUGIN_ADMIN.DEFAULT_DATE_FORMAT_PLACEHOLDER',
+                            '@data-options' => '\\Grav\\Common\\Utils::dateFormats',
+                            'options' => [
+                                '' => 'Auto Guess or Enter Custom'
+                            ],
+                            'validate' => [
+                                'type' => 'string'
                             ]
                         ],
                         'pages.dateformat.short' => [
@@ -167,6 +184,39 @@ return [
                             'validate' => [
                                 'type' => 'bool'
                             ]
+                        ],
+                        'pages.redirect_trailing_slash' => [
+                            'type' => 'toggle',
+                            'label' => 'PLUGIN_ADMIN.REDIRECT_TRAILING_SLASH',
+                            'help' => 'PLUGIN_ADMIN.REDIRECT_TRAILING_SLASH_HELP',
+                            'highlight' => 1,
+                            'options' => [
+                                1 => 'PLUGIN_ADMIN.YES',
+                                0 => 'PLUGIN_ADMIN.NO'
+                            ],
+                            'validate' => [
+                                'type' => 'bool'
+                            ]
+                        ],
+                        'pages.ignore_files' => [
+                            'type' => 'selectize',
+                            'size' => 'large',
+                            'label' => 'PLUGIN_ADMIN.IGNORE_FILES',
+                            'help' => 'PLUGIN_ADMIN.IGNORE_FILES_HELP',
+                            'classes' => 'fancy',
+                            'validate' => [
+                                'type' => 'commalist'
+                            ]
+                        ],
+                        'pages.ignore_folders' => [
+                            'type' => 'selectize',
+                            'size' => 'large',
+                            'label' => 'PLUGIN_ADMIN.IGNORE_FOLDERS',
+                            'help' => 'PLUGIN_ADMIN.IGNORE_FOLDERS_HELP',
+                            'classes' => 'fancy',
+                            'validate' => [
+                                'type' => 'commalist'
+                            ]
                         ]
                     ]
                 ],
@@ -240,7 +290,33 @@ return [
                         'languages.home_redirect.include_route' => [
                             'type' => 'toggle',
                             'label' => 'PLUGIN_ADMIN.HOME_REDIRECT_INCLUDE_ROUTE',
-                            'help' => 'PLUGIN_ADMIN.HOME_REDIRECT_INCLUDE_ROUTE',
+                            'help' => 'PLUGIN_ADMIN.HOME_REDIRECT_INCLUDE_ROUTE_HELP',
+                            'highlight' => 0,
+                            'options' => [
+                                1 => 'PLUGIN_ADMIN.YES',
+                                0 => 'PLUGIN_ADMIN.NO'
+                            ],
+                            'validate' => [
+                                'type' => 'bool'
+                            ]
+                        ],
+                        'languages.http_accept_language' => [
+                            'type' => 'toggle',
+                            'label' => 'PLUGIN_ADMIN.HTTP_ACCEPT_LANGUAGE',
+                            'help' => 'PLUGIN_ADMIN.HTTP_ACCEPT_LANGUAGE_HELP',
+                            'highlight' => 0,
+                            'options' => [
+                                1 => 'PLUGIN_ADMIN.YES',
+                                0 => 'PLUGIN_ADMIN.NO'
+                            ],
+                            'validate' => [
+                                'type' => 'bool'
+                            ]
+                        ],
+                        'languages.override_locale' => [
+                            'type' => 'toggle',
+                            'label' => 'PLUGIN_ADMIN.OVERRIDE_LOCALE',
+                            'help' => 'PLUGIN_ADMIN.OVERRIDE_LOCALE_HELP',
                             'highlight' => 0,
                             'options' => [
                                 1 => 'PLUGIN_ADMIN.YES',
@@ -649,19 +725,6 @@ return [
                             'label' => 'PLUGIN_ADMIN.DEBUGGER',
                             'help' => 'PLUGIN_ADMIN.DEBUGGER_HELP',
                             'highlight' => 0,
-                            'options' => [
-                                1 => 'PLUGIN_ADMIN.YES',
-                                0 => 'PLUGIN_ADMIN.NO'
-                            ],
-                            'validate' => [
-                                'type' => 'bool'
-                            ]
-                        ],
-                        'debugger.twig' => [
-                            'type' => 'toggle',
-                            'label' => 'PLUGIN_ADMIN.DEBUG_TWIG',
-                            'help' => 'PLUGIN_ADMIN.DEBUG_TWIG_HELP',
-                            'highlight' => 1,
                             'options' => [
                                 1 => 'PLUGIN_ADMIN.YES',
                                 0 => 'PLUGIN_ADMIN.NO'

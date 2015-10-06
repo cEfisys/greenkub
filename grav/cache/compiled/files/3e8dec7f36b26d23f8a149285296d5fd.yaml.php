@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => 'system/blueprints/config/site.yaml',
-    'modified' => 1441392246,
+    'modified' => 1442917332,
     'data' => [
         'title' => 'PLUGIN_ADMIN.SITE',
         'form' => [
@@ -11,6 +11,7 @@ return [
                 'content' => [
                     'type' => 'section',
                     'title' => 'PLUGIN_ADMIN.DEFAULTS',
+                    'underline' => true,
                     'fields' => [
                         'title' => [
                             'type' => 'text',
@@ -49,6 +50,7 @@ return [
                 'summary' => [
                     'type' => 'section',
                     'title' => 'PLUGIN_ADMIN.PAGE_SUMMARY',
+                    'underline' => true,
                     'fields' => [
                         'summary.enabled' => [
                             'type' => 'toggle',
@@ -96,6 +98,7 @@ return [
                 'metadata' => [
                     'type' => 'section',
                     'title' => 'PLUGIN_ADMIN.METADATA',
+                    'underline' => true,
                     'fields' => [
                         'metadata' => [
                             'type' => 'array',
@@ -109,6 +112,7 @@ return [
                 'routes' => [
                     'type' => 'section',
                     'title' => 'PLUGIN_ADMIN.REDIRECTS_AND_ROUTES',
+                    'underline' => true,
                     'fields' => [
                         'redirects' => [
                             'type' => 'array',

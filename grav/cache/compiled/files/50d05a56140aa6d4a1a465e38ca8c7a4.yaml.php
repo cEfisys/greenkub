@@ -2,22 +2,23 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => 'user/config/system.yaml',
-    'modified' => 1443869666,
+    'modified' => 1442917332,
     'data' => [
-        'absolute_urls' => false,
         'home' => [
             'alias' => '/home'
         ],
         'pages' => [
             'theme' => 'agency',
-            'markdown_extra' => false,
             'process' => [
                 'markdown' => true,
                 'twig' => false
+            ],
+            'markdown' => [
+                'extra' => true
             ]
         ],
         'cache' => [
-            'enabled' => true,
+            'enabled' => false,
             'check' => [
                 'method' => 'file'
             ],
@@ -36,10 +37,6 @@ return [
             'css_rewrite' => true,
             'js_pipeline' => false,
             'js_minify' => true
-        ],
-        'errors' => [
-            'display' => true,
-            'log' => true
         ],
         'debugger' => [
             'enabled' => false,

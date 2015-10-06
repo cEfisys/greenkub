@@ -1,8 +1,8 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\Config',
-    'timestamp' => 1443869672,
-    'checksum' => '50891a08dec0742891384b603a95d394',
+    'timestamp' => 1444155261,
+    'checksum' => '921587205120d0ed53038978121c8f6c',
     'data' => [
         'streams' => [
             'schemes' => [
@@ -137,6 +137,46 @@ return [
             'problems' => [
                 'enabled' => true,
                 'built_in_css' => true
+            ],
+            'simple_form' => [
+                'enabled' => false,
+                'token' => '',
+                'template_file' => 'simple_form',
+                'fields' => [
+                    'name' => [
+                        'type' => 'text',
+                        'title' => 'Name',
+                        'default' => '',
+                        'placeholder' => 'Add your name',
+                        'class' => '',
+                        'required' => true
+                    ],
+                    'email' => [
+                        'type' => 'email',
+                        'title' => 'Email',
+                        'default' => '',
+                        'placeholder' => 'Add your email',
+                        'class' => '',
+                        'required' => true
+                    ],
+                    'message' => [
+                        'type' => 'textarea',
+                        'title' => 'Message',
+                        'default' => '',
+                        'placeholder' => 'Add your message',
+                        'class' => '',
+                        'required' => true
+                    ],
+                    'submit' => [
+                        'type' => 'submit',
+                        'title' => 'Submit',
+                        'default' => '',
+                        'class' => ''
+                    ]
+                ],
+                'messages' => [
+                    'success' => 'Your message has been sent.'
+                ]
             ]
         ],
         'media' => [
@@ -307,11 +347,76 @@ return [
             ],
             'blog' => [
                 'route' => '/blog'
+            ],
+            'email' => 'your-email@domain.com',
+            'description' => 'Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.',
+            'links' => [
+                0 => [
+                    'title' => 'Services',
+                    'url' => '#services'
+                ],
+                1 => [
+                    'title' => 'Portfolio',
+                    'url' => '#portfolio'
+                ],
+                2 => [
+                    'title' => 'About',
+                    'url' => '#about'
+                ],
+                3 => [
+                    'title' => 'Team',
+                    'url' => '#team'
+                ],
+                4 => [
+                    'title' => 'Contact',
+                    'url' => '#contact'
+                ]
+            ],
+            'social' => [
+                0 => [
+                    'title' => 'twitter',
+                    'url' => 'http://twitter.com/jekyllrb'
+                ],
+                1 => [
+                    'title' => 'facebook',
+                    'url' => NULL
+                ],
+                2 => [
+                    'title' => 'stack-overflow',
+                    'url' => 'http://stackoverflow.com/questions/tagged/jekyll'
+                ],
+                3 => [
+                    'title' => 'bitbucket',
+                    'url' => 'http://bitbucket.org/jekyll'
+                ],
+                4 => [
+                    'title' => 'github',
+                    'url' => 'http://github.com/jekyll'
+                ]
+            ],
+            'address' => [
+                0 => [
+                    'line' => '3481 Melrose Place'
+                ],
+                1 => [
+                    'line' => 'Beverly Hills, CA 90210'
+                ]
+            ],
+            'quicklinks' => [
+                0 => [
+                    'title' => 'Privacy Policy',
+                    'url' => '#'
+                ],
+                1 => [
+                    'title' => 'Terms of Use',
+                    'url' => '#'
+                ]
             ]
         ],
         'system' => [
             'absolute_urls' => false,
             'timezone' => '',
+            'default_locale' => NULL,
             'param_sep' => ':',
             'languages' => [
                 'supported' => [
@@ -323,7 +428,9 @@ return [
                 'home_redirect' => [
                     'include_lang' => true,
                     'include_route' => false
-                ]
+                ],
+                'http_accept_language' => false,
+                'override_locale' => false
             ],
             'home' => [
                 'alias' => '/home'
@@ -338,6 +445,7 @@ return [
                     'count' => 20
                 ],
                 'dateformat' => [
+                    'default' => NULL,
                     'short' => 'jS M Y',
                     'long' => 'F jS \\a\\t g:ia'
                 ],
@@ -351,7 +459,7 @@ return [
                     'twig' => true
                 ],
                 'markdown' => [
-                    'extra' => false,
+                    'extra' => true,
                     'auto_line_breaks' => false,
                     'auto_url_links' => false,
                     'escape_markup' => false,
@@ -373,10 +481,17 @@ return [
                 'etag' => false,
                 'vary_accept_encoding' => false,
                 'redirect_default_route' => false,
-                'markdown_extra' => false
+                'redirect_trailing_slash' => true,
+                'ignore_files' => [
+                    0 => '.DS_Store'
+                ],
+                'ignore_folders' => [
+                    0 => '.git',
+                    1 => '.idea'
+                ]
             ],
             'cache' => [
-                'enabled' => true,
+                'enabled' => false,
                 'check' => [
                     'method' => 'file'
                 ],
@@ -411,10 +526,10 @@ return [
             ],
             'debugger' => [
                 'enabled' => false,
-                'twig' => true,
                 'shutdown' => [
                     'close_connection' => true
-                ]
+                ],
+                'twig' => true
             ],
             'images' => [
                 'default_image_quality' => 85,
