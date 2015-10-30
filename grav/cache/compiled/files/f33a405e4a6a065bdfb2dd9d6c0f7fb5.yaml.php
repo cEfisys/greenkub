@@ -2,10 +2,10 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => 'user/plugins/simple_form/blueprints.yaml',
-    'modified' => 1444157728,
+    'modified' => 1444759895,
     'data' => [
         'name' => 'Simple Form',
-        'version' => '1.2.1',
+        'version' => '1.3.2',
         'description' => 'This plugin add simple form working with webservice [Simple Form](http://getsimpleform.com) and sending email from your **Grav site**.',
         'icon' => 'envelope-o',
         'author' => [
@@ -14,40 +14,25 @@ return [
             'url' => 'http://nunopress.com'
         ],
         'homepage' => 'https://github.com/nunopress/grav-plugin-simple_form',
-        'demo' => 'http://grav-demo.nunopress.com/',
         'keywords' => 'getsimpleform, form, contact, plugin, jquery, ajax',
         'bugs' => 'https://github.com/nunopress/grav-plugin-simple_form/issues',
+        'docs' => 'https://github.com/nunopress/grav-plugin-simple_form/blob/develop/README.md',
         'license' => 'MIT',
         'form' => [
             'validation' => 'strict',
             'fields' => [
                 'enabled' => [
                     'type' => 'toggle',
-                    'label' => 'Plugin status',
+                    'label' => 'PLUGIN_SIMPLE_FORM.ADMIN.BLUEPRINTS.GLOBAL.PLUGIN_STATUS',
                     'highlight' => 1,
                     'default' => 1,
                     'options' => [
-                        1 => 'Enabled',
-                        0 => 'Disabled'
+                        1 => 'PLUGIN_SIMPLE_FORM.ADMIN.BLUEPRINTS.GLOBAL.ENABLED',
+                        0 => 'PLUGIN_SIMPLE_FORM.ADMIN.BLUEPRINTS.GLOBAL.DISABLED'
                     ],
                     'validate' => [
                         'type' => 'bool'
                     ]
-                ],
-                'token' => [
-                    'type' => 'text',
-                    'label' => 'SimpleForm.com Token',
-                    'placeholder' => 'Insert your API key here.',
-                    'help' => 'API key from https://simpleform.com site.'
-                ],
-                'template_file' => [
-                    'type' => 'text',
-                    'label' => 'Template filename',
-                    'placeholder' => 'Default template filename'
-                ],
-                'messages' => [
-                    'type' => 'array',
-                    'label' => 'Form messages'
                 ]
             ]
         ]

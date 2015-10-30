@@ -1,0 +1,8 @@
+email: hugohaviana@gmail.com
+access:
+  admin:
+    login: true
+    super: true
+fullname: 'Hugo Viana'
+title: Admin
+hashed_password: $2y$10$GnfUYXB2.IeXFCmCgVybpenMp6ztmnAMX1jOdh3PhDl9sVo7EnuTW

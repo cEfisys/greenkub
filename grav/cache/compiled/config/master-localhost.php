@@ -1,8 +1,8 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\Config',
-    'timestamp' => 1444158538,
-    'checksum' => '90800f1bd543f058f52cc28d186ccc5a',
+    'timestamp' => 1444763936,
+    'checksum' => 'ef6418ae0f9fde86ebbb6a44d28ebc1d',
     'data' => [
         'streams' => [
             'schemes' => [
@@ -128,55 +128,44 @@ return [
             ]
         ],
         'plugins' => [
+            'email' => [
+                'enabled' => true,
+                'from' => '',
+                'to' => '',
+                'mailer' => [
+                    'engine' => 'mail',
+                    'smtp' => [
+                        'server' => 'localhost',
+                        'port' => 25,
+                        'encryption' => 'none',
+                        'user' => '',
+                        'password' => ''
+                    ],
+                    'sendmail' => [
+                        'bin' => '/usr/sbin/sendmail'
+                    ]
+                ]
+            ],
             'error' => [
                 'enabled' => true,
                 'routes' => [
                     404 => '/error'
                 ]
             ],
+            'form' => [
+                'enabled' => true
+            ],
+            'login' => [
+                'enabled' => true,
+                'built_in_css' => true,
+                'route' => false
+            ],
             'problems' => [
                 'enabled' => true,
                 'built_in_css' => true
             ],
             'simple_form' => [
-                'enabled' => false,
-                'token' => '',
-                'template_file' => 'simple_form',
-                'fields' => [
-                    'name' => [
-                        'type' => 'text',
-                        'title' => 'Name',
-                        'default' => '',
-                        'placeholder' => 'Add your name',
-                        'class' => '',
-                        'required' => true
-                    ],
-                    'email' => [
-                        'type' => 'email',
-                        'title' => 'Email',
-                        'default' => '',
-                        'placeholder' => 'Add your email',
-                        'class' => '',
-                        'required' => true
-                    ],
-                    'message' => [
-                        'type' => 'textarea',
-                        'title' => 'Message',
-                        'default' => '',
-                        'placeholder' => 'Add your message',
-                        'class' => '',
-                        'required' => true
-                    ],
-                    'submit' => [
-                        'type' => 'submit',
-                        'title' => 'Submit',
-                        'default' => '',
-                        'class' => ''
-                    ]
-                ],
-                'messages' => [
-                    'success' => 'Your message has been sent.'
-                ]
+                'enabled' => true
             ]
         ],
         'media' => [

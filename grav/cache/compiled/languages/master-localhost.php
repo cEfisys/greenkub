@@ -1,7 +1,7 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\Config',
-    'checksum' => '73fd62b13f0a24c455e24a78cbbf3442:bb67442ca2f14699132149436fdc2ad4',
+    'checksum' => '73fd62b13f0a24c455e24a78cbbf3442:7cc9ca417493676a8e5004bb5e7f0e6b',
     'files' => [
         'system/languages' => [
             'en' => [
@@ -12,6 +12,49 @@ return [
     ],
     'data' => [
         'en' => [
+            'FORM_PLUGIN' => [
+                'NOT_VALIDATED' => 'Form not validated. One or more required fields are missing.'
+            ],
+            'LOGIN_PLUGIN' => [
+                'ACCESS_DENIED' => 'Access denied...',
+                'LOGIN_FAILED' => 'Login failed...',
+                'LOGIN_SUCCESSFUL' => 'You have been successfully logged in.',
+                'BTN_LOGIN' => 'Login',
+                'BTN_LOGOUT' => 'Logout',
+                'BTN_FORGOT' => 'Forgot'
+            ],
+            'PLUGIN_SIMPLE_FORM' => [
+                'TEMPLATES' => [
+                    'DEFAULT' => 'Default template from this plugin'
+                ],
+                'ADMIN' => [
+                    'BLUEPRINTS' => [
+                        'GLOBAL' => [
+                            'PLUGIN_STATUS' => 'Plugin status',
+                            'ENABLED' => 'Enabled',
+                            'DISABLED' => 'Disabled'
+                        ],
+                        'TAB' => [
+                            'TITLE' => 'Simple Form',
+                            'FIELDS' => [
+                                'TOKEN' => [
+                                    'LABEL' => 'SimpleForm.com Token',
+                                    'PLACEHOLDER' => 'Insert your API key here.',
+                                    'HELP' => 'API key from https://simpleform.com site.'
+                                ],
+                                'TEMPLATE_FILE' => [
+                                    'LABEL' => 'Template Filename',
+                                    'PLACEHOLDER' => 'Select one template filename'
+                                ],
+                                'REDIRECT_TO' => [
+                                    'LABEL' => 'Redirect to page',
+                                    'PLACEHOLDER' => 'Select one page for redirect'
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ],
             'FRONTMATTER_ERROR_PAGE' => '---
 title: %1$s
 ---

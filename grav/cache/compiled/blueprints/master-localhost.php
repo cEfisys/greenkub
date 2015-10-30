@@ -1,12 +1,24 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\Config',
-    'checksum' => '04246bd1ee67d8a3b39e31d8f2502b6c:d307f66e436f811e383df05095a24a5f',
+    'checksum' => '04246bd1ee67d8a3b39e31d8f2502b6c:578800fcbe900b398f2336702db83ba8',
     'files' => [
         'user/plugins' => [
+            'plugins/email' => [
+                'file' => 'user/plugins/email/blueprints.yaml',
+                'modified' => 1444763068
+            ],
             'plugins/error' => [
                 'file' => 'user/plugins/error/blueprints.yaml',
                 'modified' => 1444157728
+            ],
+            'plugins/form' => [
+                'file' => 'user/plugins/form/blueprints.yaml',
+                'modified' => 1444763064
+            ],
+            'plugins/login' => [
+                'file' => 'user/plugins/login/blueprints.yaml',
+                'modified' => 1444763071
             ],
             'plugins/problems' => [
                 'file' => 'user/plugins/problems/blueprints.yaml',
@@ -14,7 +26,7 @@ return [
             ],
             'plugins/simple_form' => [
                 'file' => 'user/plugins/simple_form/blueprints.yaml',
-                'modified' => 1444157728
+                'modified' => 1444759895
             ]
         ],
         'system/blueprints/config' => [
@@ -41,6 +53,116 @@ return [
             'plugins' => [
                 'type' => '_parent',
                 'name' => 'plugins'
+            ],
+            'plugins.email' => [
+                'type' => '_parent',
+                'name' => 'plugins.email'
+            ],
+            'plugins.email.enabled' => [
+                'type' => 'hidden',
+                'label' => 'Plugin status',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.email.enabled'
+            ],
+            'plugins.email.mailer' => [
+                'type' => '_parent',
+                'name' => 'plugins.email.mailer'
+            ],
+            'plugins.email.mailer.engine' => [
+                'label' => 'Mail Engine',
+                'type' => 'hidden',
+                'name' => 'plugins.email.mailer.engine'
+            ],
+            'plugins.email.mailer.default' => [
+                'type' => 'select',
+                'label' => 'Mailer',
+                'size' => 'medium',
+                'options' => [
+                    'none' => 'Disabled',
+                    'smtp' => 'SMTP',
+                    'sendmail' => 'Sendmail',
+                    'mail' => 'PHP Mail'
+                ],
+                'name' => 'plugins.email.mailer.default'
+            ],
+            'plugins.email.from' => [
+                'type' => 'text',
+                'size' => 'medium',
+                'label' => 'Email from',
+                'placeholder' => 'Default email from address',
+                'name' => 'plugins.email.from'
+            ],
+            'plugins.email.to' => [
+                'type' => 'text',
+                'size' => 'medium',
+                'label' => 'Email to',
+                'placeholder' => 'Default email to address (can also be comma separated list)',
+                'name' => 'plugins.email.to'
+            ],
+            'plugins.email.mailer.smtp' => [
+                'type' => '_parent',
+                'name' => 'plugins.email.mailer.smtp'
+            ],
+            'plugins.email.mailer.smtp.server' => [
+                'type' => 'text',
+                'size' => 'medium',
+                'label' => 'SMTP server',
+                'placeholder' => 'e.g. smtp.google.com',
+                'name' => 'plugins.email.mailer.smtp.server'
+            ],
+            'plugins.email.mailer.smtp.port' => [
+                'type' => 'text',
+                'size' => 'small',
+                'label' => 'SMTP port',
+                'placeholder' => 'Defaults to 25 (plaintext) / 587 (encrypted)',
+                'validate' => [
+                    'type' => 'number',
+                    'min' => 1,
+                    'max' => 65535
+                ],
+                'name' => 'plugins.email.mailer.smtp.port'
+            ],
+            'plugins.email.mailer.smtp.encryption' => [
+                'type' => 'select',
+                'size' => 'medium',
+                'label' => 'SMTP encryption',
+                'options' => [
+                    'none' => 'None',
+                    'ssl' => 'SSL',
+                    'ttl' => 'TTL'
+                ],
+                'name' => 'plugins.email.mailer.smtp.encryption'
+            ],
+            'plugins.email.mailer.smtp.user' => [
+                'type' => 'text',
+                'size' => 'medium',
+                'label' => 'SMTP login name',
+                'name' => 'plugins.email.mailer.smtp.user'
+            ],
+            'plugins.email.mailer.smtp.password' => [
+                'type' => 'text',
+                'size' => 'medium',
+                'label' => 'SMTP password',
+                'name' => 'plugins.email.mailer.smtp.password'
+            ],
+            'plugins.email.mailer.sendmail' => [
+                'type' => '_parent',
+                'name' => 'plugins.email.mailer.sendmail'
+            ],
+            'plugins.email.mailer.sendmail.bin' => [
+                'type' => 'text',
+                'size' => 'medium',
+                'label' => 'Path to sendmail',
+                'placeholder' => '/usr/sbin/sendmail',
+                'name' => 'plugins.email.mailer.sendmail.bin'
             ],
             'plugins.error' => [
                 'type' => '_parent',
@@ -70,6 +192,64 @@ return [
                 'label' => '404 Route',
                 'default' => '/error',
                 'name' => 'plugins.error.routes.404'
+            ],
+            'plugins.form' => [
+                'type' => '_parent',
+                'name' => 'plugins.form'
+            ],
+            'plugins.form.enabled' => [
+                'type' => 'hidden',
+                'label' => 'Plugin status',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.form.enabled'
+            ],
+            'plugins.login' => [
+                'type' => '_parent',
+                'name' => 'plugins.login'
+            ],
+            'plugins.login.enabled' => [
+                'type' => 'hidden',
+                'label' => 'Plugin status',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.login.enabled'
+            ],
+            'plugins.login.built_in_css' => [
+                'type' => 'toggle',
+                'label' => 'Use built in CSS',
+                'highlight' => 1,
+                'default' => 1,
+                'help' => 'Include the CSS provided by the admin plugin',
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.login.built_in_css'
+            ],
+            'plugins.login.route' => [
+                'type' => 'text',
+                'label' => 'Login path',
+                'help' => 'Custom route to a custom login page that your theme provides',
+                'placeholder' => '/my-custom-login',
+                'name' => 'plugins.login.route'
             ],
             'plugins.problems' => [
                 'type' => '_parent',
@@ -109,35 +289,17 @@ return [
             ],
             'plugins.simple_form.enabled' => [
                 'type' => 'toggle',
-                'label' => 'Plugin status',
+                'label' => 'PLUGIN_SIMPLE_FORM.ADMIN.BLUEPRINTS.GLOBAL.PLUGIN_STATUS',
                 'highlight' => 1,
                 'default' => 1,
                 'options' => [
-                    1 => 'Enabled',
-                    0 => 'Disabled'
+                    1 => 'PLUGIN_SIMPLE_FORM.ADMIN.BLUEPRINTS.GLOBAL.ENABLED',
+                    0 => 'PLUGIN_SIMPLE_FORM.ADMIN.BLUEPRINTS.GLOBAL.DISABLED'
                 ],
                 'validate' => [
                     'type' => 'bool'
                 ],
                 'name' => 'plugins.simple_form.enabled'
-            ],
-            'plugins.simple_form.token' => [
-                'type' => 'text',
-                'label' => 'SimpleForm.com Token',
-                'placeholder' => 'Insert your API key here.',
-                'help' => 'API key from https://simpleform.com site.',
-                'name' => 'plugins.simple_form.token'
-            ],
-            'plugins.simple_form.template_file' => [
-                'type' => 'text',
-                'label' => 'Template filename',
-                'placeholder' => 'Default template filename',
-                'name' => 'plugins.simple_form.template_file'
-            ],
-            'plugins.simple_form.messages' => [
-                'type' => 'array',
-                'label' => 'Form messages',
-                'name' => 'plugins.simple_form.messages'
             ],
             'site' => [
                 'type' => '_parent',
@@ -765,11 +927,11 @@ return [
                 '@data-options' => '\\Grav\\Common\\Utils::dateFormats',
                 'options' => [
                     '' => 'Auto Guess or Enter Custom',
-                    'd-m-Y H:i' => 'd-m-Y H:i (e.g. 06-10-2015 20:56)',
-                    'Y-m-d H:i' => 'Y-m-d H:i (e.g. 2015-10-06 20:56)',
-                    'm/d/Y h:i a' => 'm/d/Y h:i (e.g. 10/06/2015 08:56 pm)',
-                    'H:i d-m-Y' => 'H:i d-m-Y (e.g. 20:56 06-10-2015)',
-                    'h:i a m/d/Y' => 'h:i a m/d/Y (e.g. 08:56 pm 10/06/2015)'
+                    'd-m-Y H:i' => 'd-m-Y H:i (e.g. 13-10-2015 21:09)',
+                    'Y-m-d H:i' => 'Y-m-d H:i (e.g. 2015-10-13 21:09)',
+                    'm/d/Y h:i a' => 'm/d/Y h:i (e.g. 10/13/2015 09:09 pm)',
+                    'H:i d-m-Y' => 'H:i d-m-Y (e.g. 21:09 13-10-2015)',
+                    'h:i a m/d/Y' => 'h:i a m/d/Y (e.g. 09:09 pm 10/13/2015)'
                 ],
                 'validate' => [
                     'type' => 'string'
@@ -1625,21 +1787,45 @@ return [
         ],
         'nested' => [
             'plugins' => [
+                'email' => [
+                    'enabled' => 'plugins.email.enabled',
+                    'mailer' => [
+                        'engine' => 'plugins.email.mailer.engine',
+                        'default' => 'plugins.email.mailer.default',
+                        'smtp' => [
+                            'server' => 'plugins.email.mailer.smtp.server',
+                            'port' => 'plugins.email.mailer.smtp.port',
+                            'encryption' => 'plugins.email.mailer.smtp.encryption',
+                            'user' => 'plugins.email.mailer.smtp.user',
+                            'password' => 'plugins.email.mailer.smtp.password'
+                        ],
+                        'sendmail' => [
+                            'bin' => 'plugins.email.mailer.sendmail.bin'
+                        ]
+                    ],
+                    'from' => 'plugins.email.from',
+                    'to' => 'plugins.email.to'
+                ],
                 'error' => [
                     'enabled' => 'plugins.error.enabled',
                     'routes' => [
                         404 => 'plugins.error.routes.404'
                     ]
                 ],
+                'form' => [
+                    'enabled' => 'plugins.form.enabled'
+                ],
+                'login' => [
+                    'enabled' => 'plugins.login.enabled',
+                    'built_in_css' => 'plugins.login.built_in_css',
+                    'route' => 'plugins.login.route'
+                ],
                 'problems' => [
                     'enabled' => 'plugins.problems.enabled',
                     'built_in_css' => 'plugins.problems.built_in_css'
                 ],
                 'simple_form' => [
-                    'enabled' => 'plugins.simple_form.enabled',
-                    'token' => 'plugins.simple_form.token',
-                    'template_file' => 'plugins.simple_form.template_file',
-                    'messages' => 'plugins.simple_form.messages'
+                    'enabled' => 'plugins.simple_form.enabled'
                 ]
             ],
             'site' => [

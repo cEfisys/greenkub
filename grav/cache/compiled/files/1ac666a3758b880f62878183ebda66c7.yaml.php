@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => 'user/config/site.yaml',
-    'modified' => 1444158534,
+    'modified' => 1444763378,
     'data' => [
         'title' => 'cEfisys - Make it Green !',
         'author' => [
