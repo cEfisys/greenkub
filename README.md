@@ -1,3 +1,2 @@
-asdasdsdsdsdsd#ddddad:greenkub
-A platform to manage your little garden at home.
-Changes made by DT
+This is the GreenKub platform developed in Grav.
+This is the web info platform.
